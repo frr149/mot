@@ -1,5 +1,7 @@
 # MOT Flutter
 
+[![pub package](https://img.shields.io/pub/v/mot_flutter.svg)](https://pub.dev/packages/mot_flutter)
+
 **Subscribe and forget.** State management for Flutter with automatic cleanup.
 
 ## Installation

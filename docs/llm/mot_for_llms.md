@@ -2,6 +2,10 @@
 
 > **Purpose**: This document provides everything an LLM needs to assist users with MOT, a Dart/Flutter state management framework. Add this to your context when helping users with MOT.
 
+**Packages**:
+- [mot](https://pub.dev/packages/mot) — Core Dart package
+- [mot_flutter](https://pub.dev/packages/mot_flutter) — Flutter integration
+
 ---
 
 ## What is MOT?

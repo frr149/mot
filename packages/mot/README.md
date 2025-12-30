@@ -1,5 +1,7 @@
 # MOT
 
+[![pub package](https://img.shields.io/pub/v/mot.svg)](https://pub.dev/packages/mot)
+
 **Subscribe and forget.** A state management framework for Dart that handles cleanup automatically.
 
 ## Philosophy
