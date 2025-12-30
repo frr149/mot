@@ -14,7 +14,7 @@
 | 3 | BeaconField | ✅ (falta PBT) |
 | 4 | Barrel + Dartdoc | ✅ |
 | 5 | mot_flutter | ✅ (solo re-export) |
-| 6 | Documentación | ⏳ Pendiente |
+| 6 | Documentación | ⏳ (READMEs ✅, ejemplos pendientes) |
 | 7 | Publicación | ⏳ Pendiente |
 | 8 | Web + Promoción | ⏳ Pendiente |
 
@@ -127,8 +127,8 @@
 
 ### 6.1 Documentación para humanos
 
-- [ ] README.md para `mot`
-- [ ] README.md para `mot_flutter`
+- [x] README.md para `mot`
+- [x] README.md para `mot_flutter`
 
 ### 6.2 Ejemplos de complejidad creciente
 
@@ -148,7 +148,7 @@
   - Migración desde Provider, Riverpod, BLoC
   - Testing
   - FAQ
-- [ ] Incluir instrucciones en README para usuarios
+- [x] Incluir instrucciones en README para usuarios
 - [ ] Mantener actualizado con cada versión
 
 ---
