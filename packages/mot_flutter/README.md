@@ -6,7 +6,7 @@
 
 ```yaml
 dependencies:
-  mot_flutter: ^1.0.0
+  mot_flutter: ^0.1.0
 ```
 
 This package re-exports [`mot`](https://pub.dev/packages/mot) and provides Flutter integration.

@@ -1,6 +1,6 @@
 name: mot
 description: A sober and efficient alternative to state management in Dart and Flutter. Subscribe and forget.
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/frr149/mot
 repository: https://github.com/frr149/mot
 issue_tracker: https://github.com/frr149/mot/issues

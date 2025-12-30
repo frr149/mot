@@ -277,6 +277,32 @@ test: add property-based tests for ChangeSet roundtrip
 
 ---
 
+## Versionado Semántico
+
+MOT sigue SemVer: `MAJOR.MINOR.PATCH`
+
+| Cambio | Incrementa | Ejemplo |
+|--------|------------|---------|
+| Breaking API change | MAJOR | Renombrar `observe` → `watch` |
+| Nueva funcionalidad (compatible) | MINOR | Añadir `BeaconList<T>` |
+| Bug fix (compatible) | PATCH | Arreglar leak en Finalizer |
+
+### Reglas específicas
+
+| Tipo de cambio | Versión |
+|----------------|---------|
+| Cambiar firma de `observe()`, `notify()` | MAJOR |
+| Añadir nuevo método a `Beacon` | MINOR |
+| Añadir `BeaconTower`, `ChangeSet` | MINOR |
+| Mejorar performance sin cambiar API | PATCH |
+
+### Estado actual
+
+- **v0.x.x** — Pre-release, validando en producción
+- **v1.0.0** — Se publicará cuando esté validado
+
+---
+
 ## Guidelines Obligatorios
 
 **ES OBLIGATORIO seguir `docs/llm/dart.md` en todo el código.**

@@ -16,7 +16,7 @@ MOT prioritizes **simplicity of interface over simplicity of implementation**:
 
 ```yaml
 dependencies:
-  mot: ^1.0.0
+  mot: ^0.1.0
 ```
 
 For Flutter projects, use [`mot_flutter`](https://pub.dev/packages/mot_flutter) instead.

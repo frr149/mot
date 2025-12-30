@@ -28,11 +28,11 @@ MOT provides automatic memory management for observers through WeakReferences an
 ```yaml
 # For Dart-only projects
 dependencies:
-  mot: ^1.0.0
+  mot: ^0.1.0
 
 # For Flutter projects
 dependencies:
-  mot_flutter: ^1.0.0
+  mot_flutter: ^0.1.0
 ```
 
 ```dart

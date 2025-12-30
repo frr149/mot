@@ -155,14 +155,16 @@
 
 ## Fase 7: Publicación
 
+- [x] Definir esquema de versionado semántico
+- [x] Versión inicial: 0.1.0 (pre-release)
 - [ ] `dart analyze` sin warnings
 - [ ] `dart format` aplicado
 - [ ] Tests al 100%
 - [ ] CHANGELOG.md
 - [ ] LICENSE (MIT)
 - [ ] `dart pub publish --dry-run` sin errores
-- [ ] Publicar `mot` v1.0.0
-- [ ] Publicar `mot_flutter` v1.0.0
+- [ ] Publicar `mot` v0.1.0
+- [ ] Publicar `mot_flutter` v0.1.0
 
 ---
 
