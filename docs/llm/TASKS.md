@@ -127,34 +127,28 @@
 
 ### 6.1 Documentación para humanos
 
-- [ ] README.md para `mot`:
-  - Filosofía (principio sacrosanto)
-  - Instalación
-  - Quick start
-  - API
+- [ ] README.md para `mot`
+- [ ] README.md para `mot_flutter`
 
-- [ ] README.md para `mot_flutter`:
-  - Instalación
-  - Uso con Flutter
+### 6.2 Ejemplos de complejidad creciente
 
-- [ ] Ejemplo: Counter
-- [ ] Ejemplo: User profile con múltiples BeaconFields
+- [ ] Ejemplo 1: Counter (mínimo viable)
+- [ ] Ejemplo 2: User profile (múltiples BeaconFields)
+- [ ] Ejemplo 3: Todo list (colección de modelos)
+- [ ] Ejemplo 4: Shopping cart (modelo con lógica de negocio)
+- [ ] Ejemplo 5: Multi-screen app (compartir estado entre pantallas)
 
-### 6.2 Documentación para LLMs (MUY IMPORTANTE)
+### 6.3 Documentación para LLMs (MUY IMPORTANTE)
 
-Los LLMs tienen knowledge cutoff y no conocerán MOT. Debemos generar documentos optimizados para que puedan asistir a usuarios de MOT:
-
-- [ ] `docs/llm/mot_for_llms.md` — Documento completo con:
+- [x] `docs/llm/mot_for_llms.md` — Documento completo con:
   - Qué es MOT y su filosofía
   - API completa con ejemplos
-  - Patrones comunes
+  - Patrones comunes (5 ejemplos de complejidad creciente)
   - Errores típicos y cómo evitarlos
-  - Migración desde otros state managers
-
-- [ ] Incluir en el repo instrucciones para usuarios:
-  - "Añade este archivo a tu contexto cuando pidas ayuda con MOT"
-  - O usar como system prompt
-
+  - Migración desde Provider, Riverpod, BLoC
+  - Testing
+  - FAQ
+- [ ] Incluir instrucciones en README para usuarios
 - [ ] Mantener actualizado con cada versión
 
 ---
