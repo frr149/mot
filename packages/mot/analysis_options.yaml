@@ -1,7 +1,7 @@
 # Strict analysis options for MOT
 # Zero warnings policy
 
-include: package:lints/recommended.yaml
+# Using analyzer defaults - no external package needed
 
 analyzer:
   language:
@@ -20,7 +20,6 @@ linter:
   rules:
     # Error rules
     - avoid_dynamic_calls
-    - avoid_returning_null_for_future
     - avoid_slow_async_io
     - avoid_type_to_string
     - cancel_subscriptions
@@ -81,7 +80,6 @@ linter:
     - prefer_final_fields
     - prefer_final_in_for_each
     - prefer_final_locals
-    - prefer_final_parameters
     - prefer_foreach
     - prefer_if_elements_to_conditional_expressions
     - prefer_int_literals

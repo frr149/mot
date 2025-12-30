@@ -10,5 +10,5 @@ environment:
 
 dev_dependencies:
   test: ^1.25.0
-  glados: ^0.6.0
+  glados: ^1.1.7
   mocktail: ^1.0.0

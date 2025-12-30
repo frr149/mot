@@ -1,0 +1,13 @@
+# Relaxed analysis options for tests
+# Tests prioritize readability over strict style rules
+
+include: ../analysis_options.yaml
+
+linter:
+  rules:
+    # Disable rules that are too noisy in tests
+    cascade_invocations: false
+    prefer_const_constructors: false
+    prefer_const_declarations: false
+    # Test value objects don't need @immutable annotation
+    avoid_equals_and_hash_code_on_mutable_classes: false

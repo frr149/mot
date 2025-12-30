@@ -81,7 +81,7 @@ mixin Beacon on Object {
   /// cleanup before the observer dies.
   void removeObserver<T extends Object>(T observer) {
     final index = _observers.indexWhere(
-      (entry) => identical(entry._observerRef.target, observer),
+      (entry) => identical(entry.observer, observer),
     );
 
     if (index != -1) {
@@ -92,11 +92,8 @@ mixin Beacon on Object {
   }
 
   /// Returns true if the observer is currently subscribed.
-  bool hasObserver<T extends Object>(T observer) {
-    return _observers.any(
-      (entry) => identical(entry._observerRef.target, observer),
-    );
-  }
+  bool hasObserver<T extends Object>(T observer) =>
+      _observers.any((entry) => identical(entry.observer, observer));
 
   /// Schedules a notification to all observers.
   ///
@@ -142,7 +139,10 @@ mixin Beacon on Object {
     for (final entry in List.of(_observers)) {
       try {
         entry.tryInvoke();
+        // ignore: avoid_catches_without_on_clauses
       } catch (error, stackTrace) {
+        // Intentionally catching all errors to ensure notification continues
+        // and errors are properly reported via Zone.handleUncaughtError
         Zone.current.handleUncaughtError(error, stackTrace);
       }
     }

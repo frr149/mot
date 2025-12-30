@@ -15,6 +15,9 @@ class ObserverEntry<T extends Object> {
 
   final WeakReference<T> _observerRef;
 
+  /// Returns the observer if still alive, null otherwise.
+  T? get observer => _observerRef.target;
+
   /// The callback to invoke when notifying this observer.
   ///
   /// Receives the observer as parameter (the "self, not this" pattern).
