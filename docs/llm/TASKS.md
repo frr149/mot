@@ -8,17 +8,17 @@
 
 | Fase | Descripción | Estado |
 |------|-------------|--------|
-| 0 | Setup del proyecto | ✅ (falta mot_flutter pubspec) |
+| 0 | Setup del proyecto | ✅ |
 | 1 | ObserverEntry | ✅ |
-| 2 | Beacon mixin | ✅ (falta PBT) |
-| 3 | BeaconField | ✅ (falta PBT) |
+| 2 | Beacon mixin | ✅ |
+| 3 | BeaconField | ✅ |
 | 4 | Barrel + Dartdoc | ✅ |
 | 5 | mot_flutter | ✅ (solo re-export) |
 | 6 | Documentación | ⏳ (READMEs ✅, ejemplos pendientes) |
 | 7 | Publicación | ✅ pub.dev |
 | 8 | Web + Promoción | 🔜 Final |
 
-**Total tests: 45** (34 sync + 11 async)
+**Total tests: 57** (34 sync + 11 async + 12 PBT)
 
 ---
 
@@ -67,7 +67,7 @@
 
 - [x] Crear estructura de monorepo
 - [x] Crear `packages/mot/pubspec.yaml`
-- [ ] Crear `packages/mot_flutter/pubspec.yaml` (depende de mot)
+- [x] Crear `packages/mot_flutter/pubspec.yaml` (depende de mot)
 - [x] Crear `analysis_options.yaml` con reglas estrictas
 - [x] Crear `packages/mot/lib/mot.dart` (barrel export)
 - [x] Añadir dependencias dev: `test`, `glados`, `mocktail`
@@ -91,7 +91,7 @@
   - Finalizer para limpieza automática
 - [x] Tests síncronos (15 tests): registro, notificación, errores
 - [x] Tests asíncronos (11 tests): microqueue, coalescing, orden
-- [ ] Tests PBT con glados (pendiente)
+- [x] Tests PBT con glados (4 tests)
 
 ---
 
@@ -101,7 +101,7 @@
 - [x] Implementar `class BeaconField<T> with Beacon`
 - [x] Tests síncronos (12 tests): get/set, equality, herencia
 - [x] Tests asíncronos: coalescing, microqueue (incluidos en beacon_async_test)
-- [ ] Tests PBT con glados (pendiente)
+- [x] Tests PBT con glados (8 tests)
 
 ---
 
