@@ -1,0 +1,27 @@
+# Dart/Flutter
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+pubspec.lock
+
+# Coverage
+coverage/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# macOS
+.DS_Store
+*.swp
+*~
+
+# Logs
+*.log
+
+# Generated
+*.g.dart
+*.freezed.dart
