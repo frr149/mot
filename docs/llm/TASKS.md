@@ -16,7 +16,7 @@
 | 5 | mot_flutter | ✅ (solo re-export) |
 | 6 | Documentación | ⏳ (READMEs ✅, ejemplos pendientes) |
 | 7 | Publicación | ✅ pub.dev |
-| 8 | Web + Promoción | ⏳ Pendiente |
+| 8 | Web + Promoción | 🔜 Final |
 
 **Total tests: 45** (34 sync + 11 async)
 
