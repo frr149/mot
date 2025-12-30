@@ -1,0 +1,14 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <!-- Main structure -->
+  <polygon points="16,5 4,27 28,27" fill="none" stroke="url(#mot-grad)" stroke-width="1.5" opacity="0.4" stroke-linejoin="round"/>
+  <!-- Triads -->
+  <polygon points="16,2 12,9 20,9" fill="#00d4ff"/>
+  <polygon points="4,24 0,31 8,31" fill="#8b5cf6"/>
+  <polygon points="28,24 24,31 32,31" fill="#10b981"/>
+</svg>

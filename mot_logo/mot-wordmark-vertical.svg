@@ -1,0 +1,22 @@
+<svg viewBox="0 0 200 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon -->
+  <polygon points="100,45 55,130 145,130" fill="none" stroke="url(#mot-grad)" stroke-width="1.5" opacity="0.4" stroke-linejoin="round"/>
+  <polygon points="100,28 86,52 114,52" fill="none" stroke="#00d4ff" stroke-width="1.8" stroke-linejoin="round" opacity="0.8"/>
+  <polygon points="55,113 41,137 69,137" fill="none" stroke="#8b5cf6" stroke-width="1.8" stroke-linejoin="round" opacity="0.8"/>
+  <polygon points="145,113 131,137 159,137" fill="none" stroke="#10b981" stroke-width="1.8" stroke-linejoin="round" opacity="0.8"/>
+  <polygon points="100,35 93,48 107,48" fill="#00d4ff"/>
+  <polygon points="55,120 48,133 62,133" fill="#8b5cf6"/>
+  <polygon points="145,120 138,133 152,133" fill="#10b981"/>
+  
+  <!-- Wordmark -->
+  <text x="100" y="200" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="48" font-weight="600" fill="#f0f4ff">MOT</text>
+  <text x="100" y="230" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="#6b7280" letter-spacing="0.2em">MULTITUDE OF TRIADS</text>
+</svg>

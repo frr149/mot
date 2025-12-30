@@ -1,7 +1,7 @@
 ---
 name: commit
 description: Crea commits git con verificación obligatoria de calidad. Ejecuta dart analyze, format y tests antes de commitear.
-model: haiku
+model: claude-3-5-haiku-20241022
 ---
 
 # Commit
@@ -14,10 +14,6 @@ Aplicar automáticamente cuando:
 - El usuario dice "commit", "commitea", "guarda los cambios"
 - El usuario termina una tarea y hay cambios sin commitear
 - Hay cambios staged listos para commit
-
-## Modelo
-
-**OBLIGATORIO**: Usar `haiku`. Notificar: "Usando Haiku para este commit"
 
 ## Reglas
 
@@ -108,8 +104,6 @@ tipo: descripción breve (max 72 chars)
 
 ### Commit exitoso:
 ```
-Usando Haiku para este commit
-
 Verificando calidad del código...
 
 packages/mot:
@@ -125,8 +119,6 @@ Todas las verificaciones pasaron
 
 ### Commit bloqueado:
 ```
-Usando Haiku para este commit
-
 Verificando calidad del código...
 
 packages/mot:

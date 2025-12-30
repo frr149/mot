@@ -1,0 +1,12 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main structure -->
+  <polygon points="100,48 50,143 150,143" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.3" stroke-linejoin="round"/>
+  <!-- Outer triad triangles -->
+  <polygon points="100,28 83,58 117,58" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linejoin="round" opacity="0.7"/>
+  <polygon points="50,123 33,153 67,153" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linejoin="round" opacity="0.7"/>
+  <polygon points="150,123 133,153 167,153" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linejoin="round" opacity="0.7"/>
+  <!-- Inner core triangles -->
+  <polygon points="100,38 92,52 108,52" fill="#00d4ff"/>
+  <polygon points="50,133 42,147 58,147" fill="#00d4ff"/>
+  <polygon points="150,133 142,147 158,147" fill="#00d4ff"/>
+</svg>

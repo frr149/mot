@@ -1,0 +1,22 @@
+<svg viewBox="0 0 360 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mot-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d4ff"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon -->
+  <polygon points="50,18 25,72 75,72" fill="none" stroke="url(#mot-grad)" stroke-width="1.2" opacity="0.4" stroke-linejoin="round"/>
+  <polygon points="50,8 40,25 60,25" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linejoin="round" opacity="0.8"/>
+  <polygon points="25,62 15,79 35,79" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round" opacity="0.8"/>
+  <polygon points="75,62 65,79 85,79" fill="none" stroke="#10b981" stroke-width="1.5" stroke-linejoin="round" opacity="0.8"/>
+  <polygon points="50,12 44,22 56,22" fill="#00d4ff"/>
+  <polygon points="25,66 19,76 31,76" fill="#8b5cf6"/>
+  <polygon points="75,66 69,76 81,76" fill="#10b981"/>
+  
+  <!-- Wordmark -->
+  <text x="125" y="58" font-family="JetBrains Mono, monospace" font-size="46" font-weight="600" fill="#f0f4ff">MOT</text>
+  <text x="240" y="58" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#6b7280" font-weight="400">Multitude of Triads</text>
+</svg>
