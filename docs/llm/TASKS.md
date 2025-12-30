@@ -15,7 +15,7 @@
 | 4 | Barrel + Dartdoc | ✅ |
 | 5 | mot_flutter | ✅ (solo re-export) |
 | 6 | Documentación | ⏳ (READMEs ✅, ejemplos pendientes) |
-| 7 | Publicación | ⏳ Pendiente |
+| 7 | Publicación | ✅ pub.dev |
 | 8 | Web + Promoción | ⏳ Pendiente |
 
 **Total tests: 45** (34 sync + 11 async)
@@ -153,18 +153,18 @@
 
 ---
 
-## Fase 7: Publicación
+## Fase 7: Publicación ✅
 
 - [x] Definir esquema de versionado semántico
 - [x] Versión inicial: 0.1.0 (pre-release)
-- [ ] `dart analyze` sin warnings
-- [ ] `dart format` aplicado
-- [ ] Tests al 100%
-- [ ] CHANGELOG.md
-- [ ] LICENSE (MIT)
-- [ ] `dart pub publish --dry-run` sin errores
-- [ ] Publicar `mot` v0.1.0
-- [ ] Publicar `mot_flutter` v0.1.0
+- [x] `dart analyze` sin warnings
+- [x] `dart format` aplicado
+- [x] Tests al 100% (45 tests)
+- [x] CHANGELOG.md
+- [x] LICENSE (MIT)
+- [x] `dart pub publish --dry-run` sin errores
+- [x] Publicar `mot` v0.1.0
+- [x] Publicar `mot_flutter` v0.1.0
 
 ---
 
