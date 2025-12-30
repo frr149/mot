@@ -4,6 +4,24 @@
 
 ---
 
+## Estado Actual
+
+| Fase | Descripción | Estado |
+|------|-------------|--------|
+| 0 | Setup del proyecto | ✅ (falta mot_flutter pubspec) |
+| 1 | ObserverEntry | ✅ |
+| 2 | Beacon mixin | ✅ (falta PBT) |
+| 3 | BeaconField | ✅ (falta PBT) |
+| 4 | Barrel + Dartdoc | ✅ |
+| 5 | mot_flutter | ✅ (solo re-export) |
+| 6 | Documentación | ⏳ Pendiente |
+| 7 | Publicación | ⏳ Pendiente |
+| 8 | Web + Promoción | ⏳ Pendiente |
+
+**Total tests: 45** (34 sync + 11 async)
+
+---
+
 ## Decisiones de Diseño v1.0 (Cerradas)
 
 | # | Decisión | Resultado |
@@ -45,213 +63,63 @@
 
 ---
 
-## Fase 0: Setup del Proyecto
+## Fase 0: Setup del Proyecto ✅
 
-- [ ] Crear estructura de monorepo:
-  ```
-  mot/
-  ├── packages/
-  │   ├── mot/           # Dart puro
-  │   └── mot_flutter/   # Flutter
-  ```
-- [ ] Crear `packages/mot/pubspec.yaml`
+- [x] Crear estructura de monorepo
+- [x] Crear `packages/mot/pubspec.yaml`
 - [ ] Crear `packages/mot_flutter/pubspec.yaml` (depende de mot)
-- [ ] Crear `analysis_options.yaml` con reglas estrictas
-- [ ] Crear `packages/mot/lib/mot.dart` (barrel export)
-- [ ] Añadir dependencias dev: `test`, `glados`, `mocktail`
+- [x] Crear `analysis_options.yaml` con reglas estrictas
+- [x] Crear `packages/mot/lib/mot.dart` (barrel export)
+- [x] Añadir dependencias dev: `test`, `glados`, `mocktail`
 
 ---
 
-## Fase 1: Core — ObserverEntry
+## Fase 1: Core — ObserverEntry ✅
 
-La unidad mínima de observación.
-
-### 1.1 Implementación
-
-- [ ] Crear `lib/src/observer_entry.dart`
-- [ ] Implementar `ObserverEntry<T extends Object>`:
-  ```dart
-  class ObserverEntry<T extends Object> {
-    final WeakReference<T> _observerRef;
-    final void Function(T self) callback;
-    final int id;
-
-    bool get isAlive;
-    bool tryInvoke();
-  }
-  ```
-
-### 1.2 Tests
-
-- [ ] `isAlive` true cuando observer vivo
-- [ ] `isAlive` false cuando observer muerto (GC'd)
-- [ ] `tryInvoke()` ejecuta callback si vivo
-- [ ] `tryInvoke()` retorna false si muerto, sin crash
+- [x] Crear `lib/src/observer_entry.dart`
+- [x] Implementar `ObserverEntry<T extends Object>`
+- [x] Tests: `isAlive`, `tryInvoke()`, `observer` getter, `id` (7 tests)
 
 ---
 
-## Fase 2: Core — Beacon Mixin
+## Fase 2: Core — Beacon Mixin ✅
 
-El corazón del sistema.
-
-### 2.1 Estructura
-
-- [ ] Crear `lib/src/beacon.dart`
-- [ ] Implementar `mixin Beacon on Object`:
-  ```dart
-  mixin Beacon on Object {
-    final List<ObserverEntry> _observers = [];
-    final Map<int, ObserverEntry> _entriesById = {};
-    int _nextId = 0;
-    bool _notificationScheduled = false;
-    late final Finalizer<int> _finalizer;
-  }
-  ```
-
-### 2.2 Registro de observers
-
-- [ ] `observe<T extends Object>(T observer, void Function(T self) callback)`:
-  - Crear entry con WeakRef
-  - Registrar en Finalizer
-  - Añadir a lista
-
-- [ ] `removeObserver<T extends Object>(T observer)`:
-  - Buscar por identidad del observer
-  - Detach del Finalizer
-  - Remover de lista
-
-- [ ] `hasObserver<T extends Object>(T observer) → bool`
-
-### 2.3 Notificación (microqueue)
-
-- [ ] `notify()`:
-  - Si `_notificationScheduled`, no-op (coalescing)
-  - `scheduleMicrotask(_executeNotify)`
-  - Set `_notificationScheduled = true`
-
-- [ ] `_executeNotify()`:
-  - Set `_notificationScheduled = false`
-  - Limpieza oportunista: `_observers.removeWhere((e) => !e.isAlive)`
-  - Iterar copia de lista
-  - `tryInvoke()` cada entry
-  - Errores → `Zone.current.handleUncaughtError()`
-
-- [ ] `notifySync()` (escape hatch para tests):
-  - Ejecuta `_executeNotify()` síncronamente
-
-### 2.4 Finalizer
-
-- [ ] `_onObserverFinalized(int id)`:
-  - Remover de `_entriesById`
-  - Remover de `_observers`
-
-### 2.5 Tests para Beacon
-
-**Básicos:**
-- [ ] `observe` registra correctamente
-- [ ] `notify` invoca callback con `self` correcto
-- [ ] `removeObserver` elimina
-- [ ] `hasObserver` funciona
-
-**Microqueue:**
-- [ ] Múltiples cambios síncronos → una notificación
-- [ ] Notificación ocurre después del código síncrono
-- [ ] `notifySync()` ejecuta inmediatamente (para tests)
-
-**Limpieza:**
-- [ ] Observer muerto no crashea en notify
-- [ ] Observer muerto se elimina en notify (limpieza oportunista)
-
-**Errores:**
-- [ ] Callback que lanza no detiene otros callbacks
-- [ ] Error se reporta via Zone
-
-### 2.6 Tests PBT (glados)
-
-- [ ] Cualquier secuencia de observe/remove/notify no crashea
-- [ ] Observers vivos siempre se invocan en notify
-- [ ] Observers removidos nunca se invocan
+- [x] Crear `lib/src/beacon.dart`
+- [x] Implementar `mixin Beacon on Object` con:
+  - `observe()`, `removeObserver()`, `hasObserver()`
+  - `notify()` (microqueue), `notifySync()` (tests)
+  - Finalizer para limpieza automática
+- [x] Tests síncronos (15 tests): registro, notificación, errores
+- [x] Tests asíncronos (11 tests): microqueue, coalescing, orden
+- [ ] Tests PBT con glados (pendiente)
 
 ---
 
-## Fase 3: BeaconField<T>
+## Fase 3: BeaconField<T> ✅
 
-Campo observable independiente.
-
-### 3.1 Implementación
-
-- [ ] Crear `lib/src/beacon_field.dart`
-- [ ] Implementar `class BeaconField<T>`:
-  ```dart
-  class BeaconField<T> with Beacon {
-    T _value;
-
-    T get value;
-    set value(T newValue);  // Notifica si cambia
-  }
-  ```
-
-### 3.2 Comportamiento
-
-- [ ] Getter retorna valor actual
-- [ ] Setter:
-  - Si `newValue == _value`, no-op
-  - Si diferente, actualiza y llama `notify()`
-
-### 3.3 Tests
-
-- [ ] Set/get básico
-- [ ] No notifica si valor igual (mismo objeto)
-- [ ] Notifica si valor diferente
-- [ ] Múltiples observers reciben notificación
-- [ ] Observer puede leer nuevo valor en callback
-
-### 3.4 Tests PBT
-
-- [ ] `field.value = x; expect(field.value, x)` para cualquier x
-- [ ] Notificación siempre ocurre cuando valor cambia
+- [x] Crear `lib/src/beacon_field.dart`
+- [x] Implementar `class BeaconField<T> with Beacon`
+- [x] Tests síncronos (12 tests): get/set, equality, herencia
+- [x] Tests asíncronos: coalescing, microqueue (incluidos en beacon_async_test)
+- [ ] Tests PBT con glados (pendiente)
 
 ---
 
 ## Fase 4: Barrel Export y Documentación
 
-### 4.1 Exports
-
-- [ ] `lib/mot.dart`:
-  ```dart
-  export 'src/beacon.dart';
-  export 'src/beacon_field.dart';
-  ```
-
-### 4.2 Dartdoc
-
-- [ ] Documentar `Beacon` mixin
-- [ ] Documentar `observe`, `removeObserver`, `notify`
-- [ ] Documentar `BeaconField<T>`
-- [ ] Ejemplos en dartdoc
+- [x] `lib/mot.dart` barrel export
+- [x] Dartdoc en `Beacon` mixin (completo)
+- [x] Dartdoc en `BeaconField<T>` (completo)
+- [x] Dartdoc en `ObserverEntry` (completo)
+- [ ] Revisar ejemplos en dartdoc
 
 ---
 
-## Fase 5: mot_flutter
+## Fase 5: mot_flutter ✅
 
-### 5.1 Setup
-
-- [ ] Crear `packages/mot_flutter/pubspec.yaml`
-- [ ] Dependencia a `mot`
-- [ ] Dependencia a `flutter`
-
-### 5.2 Re-export
-
-- [ ] `lib/mot_flutter.dart`:
-  ```dart
-  export 'package:mot/mot.dart';
-  // + helpers de Flutter
-  ```
-
-### 5.3 Helpers (mínimos para v1.0)
-
-- [ ] Evaluar qué helpers son realmente necesarios
-- [ ] Posiblemente solo re-export de mot es suficiente
+- [x] Crear `packages/mot_flutter/pubspec.yaml`
+- [x] Crear `lib/mot_flutter.dart` (re-export de mot)
+- [x] Decidido: solo re-export para v1.0 (helpers al backlog)
 
 ---
 

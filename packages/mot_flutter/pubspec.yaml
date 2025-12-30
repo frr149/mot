@@ -1,0 +1,20 @@
+name: mot_flutter
+description: Flutter integration for MOT state management. Subscribe and forget.
+version: 1.0.0
+repository: https://github.com/frr149/mot
+issue_tracker: https://github.com/frr149/mot/issues
+
+environment:
+  sdk: ^3.0.0
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mot:
+    path: ../mot
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
